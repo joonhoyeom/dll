@@ -5,11 +5,9 @@ CXX = gcc
 OBJS = main.o
 TARGET = ldtest
 
+all : 
+	$(CXX) -o $(TARGET) main.c -Ldll/staticlib/libc -lctest
 
-$(TARGET): $(OBJS)
-	$(CXX) -o $@ $(OBJS)
-
-main.o : main.cpp
 
 clean : 
 	rm -f *.o
